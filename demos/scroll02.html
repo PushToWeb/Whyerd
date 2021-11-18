@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Alegreya Sans', Arial, sans-serif;
+            text-transform: uppercase;
+        }
+        
+        section {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            height: 100vh;
+            border: solid 2px red;
+        }
+        
+        #fullpage {
+            height: 100vh;
+            width: 100%;
+        }
+        
+        .innerdiv {
+            border: solid 2px white;
+        }
+        
+        #backgrounddiv {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-image: url("../assets/question.svg");
+            height: 150vh;
+            min-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="backgrounddiv">
+            <div>
+                asdasd
+            </div>
+        </div>
+        <div id="fullpage">
+
+            <section class="vertical-scrolling">
+                <div class="innerdiv">
+                    <h2>#1</h2>
+                    <h3>This is the first section</h3>
+                </div>
+            </section>
+            <section class="vertical-scrolling">
+                <h2>#2</h2>
+                <h3>This is the second section</h3>
+            </section>
+            <section class="vertical-scrolling">
+                <h2>#3</h2>
+                <h3>This is the third section</h3>
+            </section>
+            <section class="vertical-scrolling">
+                <h2>#4</h2>
+                <h3>This is the fourth section</h3>
+            </section>
+            <section class="vertical-scrolling">
+                <h2>#5</h2>
+                <h3>This is the fourth section</h3>
+            </section>
+        </div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
+    <script>
+        let bg = document.getElementById("backgrounddiv");
+        window.addEventListener('scroll', function() {
+            var value = window.scrollY;
+            bg.style.top = value * 0.5 + 'px';
+            console.log(value);
+        })
+
+
+        var $header_top = $('.header-top');
+        var $nav = $('nav');
+
+        $header_top.find('a').on('click', function() {
+            $(this).parent().toggleClass('open-menu');
+        });
+
+        $('#fullpage').fullpage({
+            sectionsColor: ['transparent', 'transparent', '#ff8b20', '#ff5757', '#ffd03c'],
+            sectionSelector: '.vertical-scrolling',
+            navigation: true,
+            slidesNavigation: true,
+            controlArrows: false,
+            anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
+            menu: '#menu',
+
+            afterLoad: function(anchorLink, index) {
+                $header_top.css('background', 'rgba(0, 47, 77, .3)');
+                $nav.css('background', 'rgba(0, 47, 77, .25)');
+                if (index == 5) {
+                    $('#fp-nav').hide();
+                }
+            },
+
+            onLeave: function(index, nextIndex, direction) {
+                if (index == 5) {
+                    $('#fp-nav').show();
+                }
+            },
+
+
+        });
+    </script>
+</body>
+
+</html>

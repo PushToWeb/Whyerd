@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: "Roboto Mono";
+            font-size: 24px;
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            height: 100vh;
+            width: 100%;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            scroll-snap-align: start;
+            scroll-behavior: smooth;
+        }
+        
+        #home {
+            background-color: royalblue;
+        }
+        
+        #about {
+            background-color: aquamarine;
+        }
+        
+        #footer {
+            background-color: crimson;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: white;
+        }
+        
+        nav .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        nav .container ul li {
+            display: inline-block;
+        }
+        
+        nav .container ul li a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            color: black;
+        }
+        
+        nav .container ul li.active {
+            background-color: crimson;
+            transition: 0.3s ease background-color;
+        }
+        
+        nav .container ul li.active a {
+            color: rgb(255, 255, 255);
+        }
+        
+        .main {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <div class="container">
+                <ul>
+                    <li class="home active"><a href="#home">Home</a></li>
+                    <li class="about"><a href="#about">About</a></li>
+                    <li class="contact"><a href="#contact">Contact</a></li>
+                    <li class="footer"><a href="#footer">Footer</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="home">
+            <h1>Home</h1>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+        </section>
+        <section id="footer">
+            <h1>Footer</h1>
+        </section>
+    </div>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("nav .container ul li");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.classList.contains(current)) {
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

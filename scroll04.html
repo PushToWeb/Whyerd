@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whyerd</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            /* Hide scrollbars */
+        }
+        
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .section1 {
+            background-color: rgba(30, 143, 255, 0.39);
+        }
+        
+        .section2 {
+            background-color: rgba(165, 42, 42, 0.39);
+        }
+        
+        .section3 {
+            background-color: rgba(137, 43, 226, 0.383);
+        }
+        
+        .section4 {
+            background-color: rgba(95, 158, 160, 0.39);
+        }
+        
+        .section5 {
+            background-color: rgba(128, 255, 0, 0.39);
+        }
+        
+        .section6 {
+            background-color: rgba(184, 135, 11, 0.233);
+        }
+        
+        #particles-js {
+            height: 200vh;
+            width: 100%;
+            background: #0f2e35;
+            position: fixed;
+            z-index: -1;
+        }
+        
+        .stop-scrolling {
+            height: 100%;
+            overflow: hidden;
+        }
+        /*header */
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .header-proper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        
+        .scroll-line {
+            height: 5px;
+            margin-bottom: -5px;
+            background: deeppink;
+            width: 0%;
+        }
+        
+        .headline {
+            font-size: 60px;
+            line-height: 66px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+
+
+    <header>
+        <div class="header-proper">
+            <p class="logo"><button id="testbtn">TEST</button> Scroll<span class="blue">Indicator <button id="tosection1">tosection1</button><button id="tosection2">tosection2</button><button id="tosection3">tosection3</button><button id="tosection4">tosection4</button><button id="tosection5">tosection5</button><button id="tosection6">tosection6</button> wintop: <span id="wintop"></span>                docheight: <span id="docheight"></span> winheight: <span id="winheight"></span> heightDifference: <span id="heightDifference"></span></span>
+            </p>
+
+        </div>
+        <div class="scroll-line"></div>
+    </header>
+    <div class="main">
+        <div class="content">
+            <div class="section section1">
+                <h1>Section1</h1>
+            </div>
+            <div class="section section2">
+                <h1>Section2</h1>
+            </div>
+            <div class="section section3">
+                <h1>Section3</h1>
+            </div>
+            <div class="section section4">
+                <h1>Section4</h1>
+            </div>
+            <div class="section section5">
+                <h1>Section5</h1>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var numpages = 5, // how many full pages do you have??
+            targetPage = 1,
+            position = 0,
+            lastPosition = 0,
+            scrolling = null,
+            timer = null,
+            mainstart = false,
+            interval = 50;
+        console.log("STARTING") //logging
+        setTimeout(
+            function() {
+                mainstart = true;
+                console.log("Mainstart") //logging
+            }, 500);
+
+        $(window).scroll(function() {
+            var wintop = $(window).scrollTop(),
+                docheight = $(document).height(),
+                winheight = docheight / numpages
+            var scrolled = (wintop / (docheight - winheight)) * 100;
+
+            //here there you can place any scroll efect --------------------------------- scroll effects here
+            $("#wintop").text(wintop); //optional
+            $("#docheight").text(docheight); //optional
+            $("#winheight").text(winheight); //optional
+
+
+
+            $('.scroll-line').css('width', (scrolled + '%')); //optional
+
+
+            //-----------------------------------------------------------------------------------------------
+            position = wintop;
+
+            if (scrolling === null) {
+                startInterval();
+            }
+
+
+        });
+
+        function ScrollToTarget() {
+            if (scrolling !== null) return;
+            disableScroll()
+            scrolling = setInterval(ScrollToHeight, 1); //15
+        }
+
+        function ScrollToHeight() {
+            var wintop = $(window).scrollTop(),
+                docheight = $(document).height(),
+                winheight = docheight / numpages,
+                targetheight = winheight * (targetPage - 1),
+                heightDifference = targetheight - wintop;
+            $("#heightDifference").text(heightDifference); //optional
+            if (Math.round(heightDifference) === 0) {
+                clearInterval(scrolling);
+                window.scrollTo(0, targetheight);
+                scrolling = null;
+                lastPosition = position;
+                console.log(0) //logging
+                console.log("done") //logging
+                enableScroll()
+
+            } else if (heightDifference <= 20 && heightDifference >= -20) {
+                console.log(2) //logging
+                if (heightDifference <= 2 && heightDifference >= -2) {
+                    window.scrollTo(0, targetheight);
+
+                } else if (heightDifference < 0) {
+                    window.scrollTo(0, wintop - 2);
+                } else {
+                    window.scrollTo(0, wintop + 2);
+                }
+            } else if (heightDifference < 100 && heightDifference > -100) {
+                console.log(heightDifference / 10) //logging
+                window.scrollTo(0, wintop + (heightDifference / 10));
+            } else if (heightDifference < 250 && heightDifference > -250) {
+                console.log(heightDifference / 5) //logging
+                window.scrollTo(0, wintop + (heightDifference / 5));
+            } else {
+                console.log(52) //logging
+                if (heightDifference < 0) {
+                    window.scrollTo(0, wintop - 52);
+                } else {
+                    window.scrollTo(0, wintop + 52);
+                }
+            }
+            console.log("wintop: " + wintop + ", docheight: " + docheight + ", winheight: " + winheight + ", targetheight: " + targetheight + ", heightDifference: " + heightDifference); //logging
+
+
+        }
+
+        $("#testbtn").click(function() {
+            ScrollToTarget()
+
+        });
+
+
+
+
+        function startInterval() {
+            if (timer !== null) return;
+            timer = setInterval(function() {
+                if (lastPosition === position) {
+
+                    stopInterval();
+                    var wintop = $(window).scrollTop(),
+                        docheight = $(document).height(),
+                        winheight = docheight / numpages,
+                        targetheight = winheight * (targetPage - 1),
+                        heightDifference = targetheight - wintop;
+                    console.log("stop: " + heightDifference); //logging
+
+                    if (heightDifference > 0) {
+                        console.log(parseInt(heightDifference / winheight)) //logging
+                        targetPage = targetPage - parseInt(heightDifference / winheight);
+                        if (mainstart) {
+                            targetPage--;
+                        }
+                    } else if (heightDifference < 0) {
+                        console.log(parseInt(heightDifference / winheight * (-1))) //logging
+                        targetPage = targetPage + parseInt(heightDifference / winheight * (-1));
+                        if (mainstart) {
+                            targetPage++;
+                        }
+                    }
+                    mainstart = true;
+                    if (targetPage < 1) {
+                        targetPage = 1;
+                    } else if (targetPage > numpages) {
+                        targetPage = numpages;
+                    }
+                    console.log("target: " + targetPage) //logging
+                    ScrollToTarget();
+                } else {
+                    lastPosition = position;
+                    console.log(position); //logging
+                }
+
+            }, interval);
+        }
+
+        function stopInterval() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function disableScroll() {
+            document.body.classList.add("stop-scrolling");
+        }
+
+        function enableScroll() {
+            document.body.classList.remove("stop-scrolling");
+        }
+    </script>
+
+</body>
+
+</html>

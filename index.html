@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <title>Whyerd</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+
+    <div class="main">
+
+
+
+
+        <div class="fullpage">
+            <div class="center innerbody">
+                <img id="mainlogo" src="./assets/logo.png" alt="Whyerd Logo">
+                <h1 style="margin-bottom: 5%; ">Have you ever tried psychedelics?</h1>
+                <div style="float:left; width: 50%; border-radius: 25px; display: flex;
+            align-items: center;
+            justify-content: center;">
+                    <div id="yes__card__btn" class="card__btn">YES</div>
+                </div>
+                <div style="width: 50%; border-radius: 25px; display: flex;
+            align-items: center;
+            justify-content: center;">
+                    <div id="no__card__btn" class="card__btn">
+                        <p>NO</p>
+                    </div>
+                </div>
+                <!-- <div style=" background-color: #CEE8F0; padding: 20px; margin: auto; max-width: 250px; border: solid 2px #CEE8F0; overflow: hidden; border-radius: 20px;  margin-top: 5%;">
+                <img style="padding-right: 50px; padding-left: 50px;resize: horizontal; overflow: hidden; width: 100%; height: auto; " src="./assets/question.svg" alt="">
+            </div> -->
+
+                <div class="card" style="z-index: 10;">
+                    <div class="card__inner start ">
+                        <div class="card__face card__face--front start__card ">
+                            <img style="padding-right: 50px; padding-left: 50px;resize: horizontal; overflow: hidden; width: 100%; height: auto; " src="./assets/question.svg " alt=" ">
+                        </div>
+                        <div class="card__face card__face--back yes__card ">
+                            <p>Having tried psychedelics, You must be familiar with the importance of little details during a trip. At WHYERD, none of these can avoid our attention. If You have already tried psychedelics, but it was not a pleasant experience,
+                                or You simply crave a new place to explore while we take care of You, than it is the right place.</p>
+                        </div>
+                        <div class="card__face card__face--back no__card ">
+                            <p>We are not surprised! As the use of psychedelics is only in its dawn in the 21st century, it is more than probable that many of us have no idea of their usage, effects, risks, and benefits, but are still very interested in
+                                them. If you recognize yourself in these lines, WHYERD is definitely your No. 1 choice. We give You a safe head start with everything you need to know, so later on, you can be more responsible yourself.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="card.js "></script>
+
+            </div>
+
+
+        </div>
+
+        <div class="fullpage noparticle">
+            <div class="center innerbody">
+                <h2>Brief Introduction</h2>
+                <p>Experimenting with something for the first time is never easy. Especially if we talk about psychedelics. There are many stories about things going wrong or unexpected. Our conviction is that it does not have to be like this. Psilocybin
+                    itself is a physiologically harmless substance, which can cause an unforgettable and joyous trip experience, and has many other scientifically proven long-term benefits. At WHYERD, everything is set up for you to have the best possible
+                    first impression on the famous Dutch speciality, the Magic Truffles, whilst our mission is to minimalize the risks both psychologically and healthwise.</p>
+                <br>
+                <h2>What we do</h2>
+                <p>WHYERD is the absolute safe spot to explore the truffle-lent psychedelic experience for the first time and/or to have a trip where everything’s taken care of. Our service includes 6 hours of well-prepared trip sitting in an environment
+                    that perfectly resonates with your mind and unleashes your imagination on truffles. We also provide an introduction of its effect and basic knowledge in the first hour, the substance, games and activities, food and drinks, everything’s
+                    included in the price. During the session, we will be present all along and you can turn to us with any thoughts and questions. In the end, everyone is free to grab a trip stopper, containing mainly dextrose and magnesium, which can
+                    knock off any residual effects.</p>
+            </div>
+        </div>
+
+        <div class="fullpage ">
+            <div class="center innerbody">
+                <h1 style="margin-bottom: 30px;">CHECK OUT</h1>
+                <div style="display: flex;">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <div class="slideshow-container-body">
+                        <div class="slideshow-container">
+
+                            <div class="mySlides fade">
+                                <iframe src="https://www.youtube.com/embed/u31qwQUeGuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="mySlides fade">
+                                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="mySlides fade">
+                                <iframe src="https://www.youtube.com/embed/u31qwQUeGuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {
+                            slideIndex = 1
+                        }
+                        if (n < 1) {
+                            slideIndex = slides.length
+                        }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="fullpage noparticle">
+            <div class="center innerbody">
+                <h2>Our mission</h2>
+                <p>The main purpose of WHYERD is to educate safely and legally. Psychedelics have countless proven beneficial effects, but at the same time, it can be a huge step for some to cope with alone. Our mission is to teach and help through a wonderful
+                    experience on the spot. Our ultimate goal is to give you the knowledge, and more importantly the confidence, to use psychedelics in a healthy and balanced way later on your own, to develop personally in the future. What is unique about
+                    us, is that we don’t only offer trip sitting, but a spectacular and trippy place to enhance the experience, along with many extra services.</p>
+                <p>DO KEEP IN MIND, that with the knowledge gained you won’t be able to tripsit for others experiencing for the first time. It is only for yourself!</p>
+                <br>
+                <h2>Why choose WHYERD?</h2>
+                <p>As the psychedelic renaissance started to arise in the past years, many facilities came up with services involving the use of psilocybin. There are some great medical and therapeutic programs amongst them. What is unique about our sessions
+                    is that we tend to approach the use of the substance in a recreational way. Our program does not require the same amount of commitment as any other, as we don’t involve several-day repeating trips, high dosage intakes or in-depth psychological
+                    healing. Our sessions take up a maximum of 6 hours and would like to show the lightsome, funny and spectacular side of magic truffles. We believe that in this way, people (especially beginners) can set their feet more easily in the
+                    field of psychedelics and can decide the purpose of their future usage.</p>
+            </div>
+        </div>
+
+        <div class="fullpage">
+            <div class="center innerbody">
+                <h2>What are magic truffles?</h2>
+                <p>Maybe you have heard of people going on a trip with magic/psychedelic mushrooms, but what are exactly magic truffles?</p>
+                <p>There are around 180 species of magic mushrooms containing the psychedelic compounds psilocybin and psilocin. Out of all these, there are 4 which forms sclerotia instead of the fruiting body: the “mushroom” if some conditions are met.
+                    These are the Mexicana, Pajaritos, Tampanesis, and Atlantis. Sclerotia is a mass of mycelium which is formed underground but contains the exact same psychedelic compounds. In 2007, magic mushrooms were banned in the Netherlands, but
+                    truffles remained legal, being the only permitted way to consume the psychedelic. The reason why magic truffles were left off this prohibition is uncertain, but many people believe that this is because its potency is less than the
+                    mushroom’s. However, the trip it causes does not differ.</p>
+                <br>
+                <br>
+                <h2>Effects:</h2>
+                <div>
+
+                    <ul id="" style="margin: 0px auto; display: block; text-align: left; width:fit-content;">
+                        <li>
+                            Different perception of the world around (intense colours, geometric shapes, sounds and music feels more profound)
+                        </li>
+                        <li>
+                            Distorted sense of time (feeling of time slowed down or accelerated)
+                        </li>
+                        <li>
+                            Overflow of thoughts (occasionally getting lost during a sentence)
+                        </li>
+                        <li>
+                            Openness to ideas
+                        </li>
+                        <li>
+                            Feeling oneness with others around and with the nature/universe
+                        </li>
+                        <li>
+                            Change of mood (amplified funniness/happiness, euphoria, or anxiety)
+                        </li>
+                        <li>
+                            Associative thoughts
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fullpage noparticle">
+            <div class="center innerbody">
+                <h2>At WHYERD we provide you</h2>
+                <div>
+                    <ul id="" style="margin: 0px auto; display: block; text-align: left; width:fit-content;">
+                        <li>
+                            A brief introduction of the substance and its effects
+                        </li>
+                        <li>
+                            A safe and trippy designed place
+                        </li>
+                        <li>
+                            Activities to spend the day on while tripping
+                        </li>
+                        <li>
+                            The safe hands of our trip sitters
+                        </li>
+                        <li>
+                            A safe entry amount of the substance
+                        </li>
+                        <li>
+                            Food and drinks
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <h2>DO NOT VISIT:</h2>
+                <p>In some cases, we still advise you to not visit WHYERD.</p>
+                <div>
+                    <ul id="" style="margin: 0px auto; display: block; text-align: left; width:fit-content;">
+                        <li>
+                            If You are under the influence of any traumatic events that happened in the past. </li>
+                        <li>
+                            If You are under the influence of any substance, including legal, illegal, and prescribed ones.
+                        </li>
+                        <li>
+                            If You are pregnant.
+                        </li>
+                        <li>
+                            If You are under the age of 18.
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <h2>What we expect from You to have a pleasant journey</h2>
+                <div>
+                    <ul id="" style="margin: 0px auto; display: block; text-align: left; width:fit-content;">
+                        <li>
+                            Always communicate! Have as many questions as You want. In case of any doubts or frightening thoughts, it is easier if You let us break these so-called “loops”.
+                        </li>
+                        <li>
+                            As we have mentioned above, please arrive sober! Other substances may increase or decrease the experience, which can ruin the trip either way. Someone having a too intense journey and not being able to cope with it could also frighten others.
+                        </li>
+                        <li>
+                            Prepare a bit in advance of the trip! You can do it easily by watching/reading our enclosed contents.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fullpage" id="booking">
+            <div class="center innerbody" style="width: 100%;">
+                <h1 style="margin-bottom: 100px;">BOOK YOUR TRIP</h1>
+                <div id="calendar_container">
+                    <div id="calendar_header">
+                        <div id="prev_week">
+                            <button onclick="prewweek()" class="hide__me">Previous week</button>
+                        </div>
+                        <div id="date">
+                            2021.09.20-2021.09.26
+                        </div>
+                        <div id="next_week">
+                            <button onclick="nextweek()">Next week</button>
+                        </div>
+                    </div>
+                    <div id="calendar_body">
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fullpage noparticle">
+            <div class="center innerbody">
+                <h1 style="margin-bottom: 100px;">CONTACT US</h1>
+                <div id="contact-body">
+                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                    <script src="./contact-form.js"></script>
+                    <form id="contact-form" method="POST" action="contact-form.php" target="dummyframe">
+                        <label>
+                            Email
+                            <input type="email" id="femail" name="email" placeholder="Your Email">
+                        </label>
+                        <label>
+                            Name
+                            <input type="text" id="fname" name="name" placeholder="Your Name">
+                        </label>
+                        <label>
+                            Subject
+                            <input type="text" id="fsubject" name="subject" placeholder="Subject">
+                        </label>
+                        <label>
+                            Message
+                            <textarea id="fmessage" name="message" placeholder="Your Message"></textarea>
+                        </label>
+                        <button type="submit" id="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js" integrity="sha512-szJ5FSo9hEmXXe7b5AUVtn/WnL8a5VofnFeYC2i2z03uS2LhAch7ewNLbl5flsEmTTimMN0enBZg/3sQ+YOSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        //scripts here
+        let count = 10;
+        let maxWeeksCount = 2;
+        let currentWeek = 1;
+        loadCalendar();
+
+        function nextweek() {
+            $("#calendar_body .week:nth-child(" + currentWeek + ")").addClass("hide__me");
+            currentWeek++;
+            $("#calendar_body .week:nth-child(" + currentWeek + ")").removeClass("hide__me");
+            if (currentWeek >= maxWeeksCount) {
+                $("#next_week button").addClass("hide__me");
+            }
+            $("#prev_week button").removeClass("hide__me");
+            console.log(currentWeek);
+        }
+
+        function prewweek() {
+            $("#calendar_body .week:nth-child(" + currentWeek + ")").addClass("hide__me");
+            currentWeek--;
+            $("#calendar_body .week:nth-child(" + currentWeek + ")").removeClass("hide__me");
+            if (currentWeek <= 1) {
+                $("#prev_week button").addClass("hide__me");
+            }
+            $("#next_week button").removeClass("hide__me");
+            console.log(currentWeek);
+        }
+
+        function loadCalendar() {
+
+
+            $.ajax({
+                type: 'POST',
+                url: '/interact.php',
+                data: {
+                    m: 4
+                },
+                success: function(data) {
+                    rawdt = jQuery.parseJSON(data);
+                    console.log(rawdt);
+
+                    todayY = parseInt(rawdt[0][0])
+                    todayM = parseInt(rawdt[0][1])
+                    todayD = parseInt(rawdt[0][2])
+
+                    customSessionindex = 0;
+                    customStausindex = 0;
+
+                    todayPlace = (todayD - 2 + rawdt[2][1][3]) % 7 + 1;
+                    startday = todayD - todayPlace;
+                    console.log("Today place: " + todayPlace + " - 20" + todayY + "." + todayM + "." + todayD + ".");
+                    currentY = todayY;
+                    currentM = todayM;
+                    currentD = todayD - todayPlace + 1;
+                    monthIndex = 1;
+                    if (todayPlace > todayD) {
+                        console.log("true");
+                        if (currentM === 1) {
+                            currentY--;
+                            currentM = 12;
+
+                        } else {
+                            currentM--;
+                        }
+                        monthIndex = 0;
+                        currentD = rawdt[2][0][2] + currentD;
+                    }
+                    console.log("year: " + currentY + ", month: " + currentM + ", day: " + currentD);
+
+                    week = 1;
+                    toadd = "";
+                    toadd += '<div id="week' + week + '" class="week">';
+                    let weekDemo = "";
+                    for (let i = 1; i < 8; i++) {
+                        weekDemo += currentY + "." + currentM + "." + currentD + ". ";
+                        session1 = getSessionPreview("" + currentY + "" + currentM + "" + currentD + "0", i);
+                        session2 = getSessionPreview("" + currentY + "" + currentM + "" + currentD + "1", i);
+                        toadd += '<div class="day' +
+                            ((currentD < todayD) ? ' past' : '') + ((currentD === todayD) ? ' today' : '') + '"> <p>' + getMonthName(currentM) + '.</p> <h1>' + currentD + '</h1> <h2>' + getDayName(i) + '.</h2> <div class="session' + session1[0] + '"> <h6>Start:</h6> <p>' + session1[1] + '</p> <h6>End:</h6> <p>' + session1[2] + '</p> </div> <div class="session' + session2[0] + '"> <h6>Start:</h6> <p>' + session2[1] + '</p><h6> End:</h6> <p>' + session2[2] + '</p> </div> </div>'
+                        nextDay();
+                    }
+                    toadd += '</div>';
+                    console.log(weekDemo);
+                    week++;
+                    $("#calendar_body").html(
+                        toadd
+                    );
+                    toadd = "";
+                    while (monthIndex <= todayM + 2) {
+
+
+                        toadd = "";
+                        toadd += '<div id="week' + week + '" class="week hide__me">';
+                        for (let i = 1; i < 8; i++) {
+                            session1 = getSessionPreview("" + currentY + "" + currentM + "" + currentD + "0", i);
+                            session2 = getSessionPreview("" + currentY + "" + currentM + "" + currentD + "1", i);
+
+                            toadd += '<div class="day' +
+                                '"> <p>' + getMonthName(currentM) + '.</p> <h1>' + currentD + '</h1> <h2>' + getDayName(i) + '.</h2> <div class="session' + session1[0] + '"> <h6>Start:</h6> <p>' + session1[1] + '</p> <h6>End:</h6> <p>' + session1[2] + '</p> </div> <div class="session' + session2[0] + '"> <h6>Start:</h6> <p>' + session2[1] + '</p><h6> End:</h6> <p>' + session2[2] + '</p> </div> </div>'
+                            nextDay();
+                        }
+                        toadd += '</div>';
+                        week++;
+                        $("#calendar_body").html(
+                            $("#calendar_body").html() + toadd
+                        );
+
+                    }
+
+
+
+
+
+                    day = 1;
+                    week = 1;
+                    toadd = "";
+                    for (let i = 0; i < 1; i++) {
+                        toadd += '<div id="week' + week + '" class="week hide__me">';
+                        for (let j = 0; j < 7; j++) {
+
+                            toadd += '<div class="day"> <p>Jan.</p> <h1>' + day + '</h1> <h2>Sun.</h2> <div class="session"> <h6>Start:</h6> <p>11:30</p> <h6>End:</h6> <p>15:30</p> </div> <div class="session"> <h6>Start:</h6> <p>11:30</p> <h6>End:</h6> <p>15:30</p> </div> </div>'
+                            day++;
+                        }
+                        toadd += '</div>';
+
+                        week++;
+                    }
+                    $("#calendar_body").html(
+                        $("#calendar_body").html() + toadd
+                    );
+                    maxWeeksCount = $("#calendar_body").children().length;
+                    console.log("Number of weeks: " + $("#calendar_body").children().length);
+
+                    function nextDay() {
+                        currentD++;
+
+                        if (currentD > rawdt[2][monthIndex][2]) { //chnage month
+                            console.log("new month")
+                            currentD = 1;
+                            currentM++;
+                            monthIndex++;
+                            if (currentM > 12) { //chnage year
+                                console.log("new year")
+                                currentM = 1;
+                                currentY++;
+                            }
+                        }
+                    }
+
+                    function getSessionPreview(id, dayid) {
+                        let retArray = ["", "", ""]
+                        if (rawdt[1][customSessionindex][0] === id) {
+                            retArray[0] = rawdt[1][customSessionindex][1];
+                            console.log(id)
+                            customSessionindex++;
+                        } else {
+                            retArray[0] = ((rawdt[0][4 + dayid] === "1") ? "a" : "");
+                        }
+
+                        if (retArray[0] === "a") {
+                            if (rawdt[3][customStausindex][0] === id) {
+                                if (rawdt[3][customStausindex][1] !== null) {
+                                    retArray[1] = rawdt[3][customStausindex][1];
+                                }
+                                if (rawdt[3][customStausindex][2] !== null) {
+                                    retArray[2] = rawdt[3][customStausindex][2];
+                                }
+                                customStausindex++;
+                            }
+                            if (retArray[1] === "") {
+                                if (id.substr(-1) === "0") {
+                                    retArray[1] = rawdt[0][3];
+                                } else {
+                                    retArray[1] = rawdt[0][12];
+                                }
+                            }
+                            if (retArray[2] === "") {
+                                if (id.substr(-1) === "0") {
+                                    retArray[2] = rawdt[0][4];
+                                } else {
+                                    retArray[2] = rawdt[0][13];
+                                }
+                            }
+                        }
+
+                        if (retArray[0] === "a") {
+                            retArray[0] = " greenbg";
+                        } else if (retArray[0] === "b") {
+                            retArray[0] = " redbg";
+                        }
+                        return retArray;
+
+                    }
+
+                    function getMonthName(id) {
+                        switch (id) {
+                            case 1:
+                                return "Jan";
+                                break;
+                            case 2:
+                                return "Feb";
+                                break;
+                            case 3:
+                                return "Mar";
+                                break;
+                            case 4:
+                                return "Apr";
+                                break;
+                            case 5:
+                                return "May";
+                                break;
+                            case 6:
+                                return "Jun";
+                                break;
+                            case 7:
+                                return "Jul";
+                                break;
+                            case 8:
+                                return "Aug";
+                                break;
+                            case 9:
+                                return "Sep";
+                                break;
+                            case 10:
+                                return "Oct";
+                                break;
+                            case 11:
+                                return "Nov";
+                                break;
+                            case 12:
+                                return "Dec";
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    function getDayName(id) {
+                        switch (id) {
+                            case 1:
+                                return "Mon";
+                                break;
+                            case 2:
+                                return "Tue";
+                                break;
+                            case 3:
+                                return "Wed";
+                                break;
+                            case 4:
+                                return "Thu";
+                                break;
+                            case 5:
+                                return "Fri";
+                                break;
+                            case 6:
+                                return "Sat";
+                                break;
+                            case 7:
+                                return "Sun";
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                },
+                error: function(data) {
+                    alert('There was an error was an error connecting to server. Please reload the page!');
+                }
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>

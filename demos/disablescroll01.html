@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <span> hello there </span><br/>
+    <a href="#bottom"> click here to go down </a>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <a name="bottom"> just sitting </a>
+</body>
+<script type="text/javascript">
+    var userScroll = false;
+
+    function mouseEvent(e) {
+        userScroll = true;
+    }
+
+
+    $(function() {
+
+        // reset flag on back/forward 
+
+        $(document).keydown(function(e) {
+            if (e.which == 33 // page up 
+                ||
+                e.which == 34 // page dn 
+                ||
+                e.which == 32 // spacebar
+                ||
+                e.which == 38 // up 
+                ||
+                e.which == 40 // down 
+                ||
+                (e.ctrlKey && e.which == 36) // ctrl + home 
+                ||
+                (e.ctrlKey && e.which == 35) // ctrl + end 
+            ) {
+                userScroll = true;
+            }
+        });
+
+        // detect user scroll through mouse
+        // Mozilla/Webkit 
+        if (window.addEventListener) {
+            document.addEventListener('DOMMouseScroll', mouseEvent, false);
+        }
+
+        //for IE/OPERA etc 
+        document.onmousewheel = mouseEvent;
+
+
+        // to reset flag when named anchors are clicked
+        $('a').click(function() {
+            userScroll = false;
+        });
+
+        // detect browser/user scroll
+        $(document).scroll(function() {
+            console.log('Scroll initiated by ' + (userScroll == true ? "user" : "browser"));
+        });
+    });
+</script>
+
+</html>

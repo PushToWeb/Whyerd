@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+/* div {
+    border: solid 1px yellow;
+} */
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    color: rgba(251, 255, 234, 0.8);
+    color: #CEE8F0;
+    line-height: 1.5em;
+}
+
+.innerbody h1 {
+    font-size: 45px;
+}
+
+.noparticle {
+    background-color: #CEE8F0;
+    color: #132E35;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.yes__card {
+    border: solid 2px#5e60ce;
+    background-color: #5e60ce;
+    color: #CEE8F0;
+}
+
+.no__card {
+    border: solid 2px #2ec4b6;
+    background-color: #2ec4b6;
+    color: #132E35;
+}
+
+.start__card {
+    padding: 20px;
+    border: solid 2px #CEE8F0;
+    background-color: #cee8f015;
+    mask-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg);
+    mask-size: contain;
+}
+
+.fullpage {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+#mainlogo {
+    max-width: 200px;
+    margin-bottom: 5%;
+}
+
+#particles-js {
+    height: 100%;
+    width: 100%;
+    background: #0f2e35;
+    position: fixed;
+    z-index: -1;
+}
+
+.center {
+    text-align: center;
+}
+
+.card__btn {
+    width: 110px;
+    text-align: center;
+    font-size: 18px;
+    padding: 7px 0px 7px 0px;
+    border-radius: 25px;
+    font-weight: 500;
+    position: relative;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+#yes__card__btn {
+    border: solid 2px#5e60ce;
+    color: #5e60ce;
+    background-color: #5e60ce50;
+}
+
+#no__card__btn {
+    border: solid 2px#2ec4b6;
+    color: #2ec4b6;
+    background-color: #2ec4b650;
+}
+
+#yes__card__btn:hover {
+    color: #CEE8F0;
+    background-color: #5e60ce;
+    box-shadow: 0px 0px 2px 2px #5e60ce50;
+}
+
+#no__card__btn:hover {
+    color: #CEE8F0;
+    background-color: #2ec4b6;
+    box-shadow: 0px 0px 2px 2px #2ec4b650;
+}
+
+@media only screen and (max-width: 600px) {
+    #mainlogo {
+        width: 100px;
+    }
+    h1 {
+        font-size: 23px !important;
+    }
+}
+
+.card {
+    margin: 20px auto;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card__inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    /*box-shadow: 0px 0px 1px 2px rgba(255, 255, 255, 0.2);*/
+    padding: 20px;
+    text-align: center;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.card__face--front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide__me {
+    display: none !important;
+}
+
+.innerbody {
+    max-width: 1100px;
+    height: 100%;
+    padding: 0px 40px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.mySlides {
+    display: none;
+    border-radius: 30px;
+}
+
+.mySlides iframe {
+    border: solid 2px white;
+    width: 800px;
+    height: 450px;
+    border-radius: 30px;
+    margin-bottom: -3px;
+    padding: 0px;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    border-radius: 30px;
+    margin: 0;
+    padding: 0;
+    /*box-shadow: 0px 0px 15px 3px rgba(255, 255, 255, 0.2);*/
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    user-select: none;
+}
+
+.prev {
+    border-radius: 10px 0 0 10px;
+}
+
+
+/* Position the "next button" to the right */
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/*Form css*/
+
+label,
+input,
+textarea {
+    display: block;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slideshow-container-body {
+    background: white;
+    border-radius: 30px;
+}
+
+ul {
+    max-width: 500px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+@media only screen and (max-width: 910px) {
+    .mySlides iframe {
+        width: 480px;
+        height: 270px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mySlides iframe {
+        width: 288px;
+        height: 162px;
+    }
+}
+
+
+/* ------------------------------------------------------ Calendar CSS start ------------------------------------------------------*/
+
+#calendar_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.week {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 10px 0px;
+    position: absolute;
+    background-color: #162E35;
+}
+
+.day {
+    border-right: #D0E8F0 1px solid;
+    display: table-cell;
+}
+
+#calendar_container {
+    border-radius: 30px;
+    border: 2px solid White;
+    padding: 10px;
+    background-color: #162E35;
+    max-width: 1020px;
+    width: 100%;
+    color: #D0E8F0;
+}
+
+.session {
+    border-radius: 20px;
+    background-color: grey;
+    margin: 10px 5%;
+    color: grey;
+    height: 100px;
+    min-height: 100px;
+    cursor: not-allowed;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #162E35;
+}
+
+.session:hover {
+    transform: scale(1.05);
+}
+
+.day:last-child {
+    border: none !important;
+}
+
+#calendar_body {
+    width: 100%;
+    height: 342px;
+    position: relative;
+}
+
+.greenbg {
+    background-color: #309F43;
+    color: white;
+    cursor: pointer;
+}
+
+.redbg {
+    background-color: #A2283B;
+    color: #A2283B;
+}
+
+.chhosenday {
+    transform: scale(1.03);
+    border: 2px solid White;
+}
+
+.day h1:first-of-type {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#prev_week,
+#next_week {
+    width: 110px;
+}
+
+#prev_week button,
+#next_week button {
+    border-radius: 20px;
+    padding: 5px 7px;
+    border: none;
+    cursor: pointer;
+    background-color: #d0e8f06c;
+    transition: all 0.2s ease-in-out;
+}
+
+#prev_week button:hover,
+#next_week button:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #d0e8f0;
+    transform: scale(1.1);
+}
+
+.today {
+    color: #8872DA;
+}
+
+.past {
+    color: #737f83;
+}
+
+.past .session {
+    background-color: #324145;
+    color: #324145;
+}
+
+
+/* ------------------------------------------------------ Calendar CSS end ------------------------------------------------------*/

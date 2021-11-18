@@ -1,0 +1,21 @@
+[23-Oct-2021 17:58:47 Europe/Budapest] PHP Parse error:  syntax error, unexpected '$querryStr' (T_VARIABLE) in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 5
+[23-Oct-2021 11:00:00 America/Chicago] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 7
+[23-Oct-2021 11:00:22 America/Chicago] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 13
+[23-Oct-2021 18:07:17 Europe/Budapest] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 18:07:22 Europe/Budapest] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 18:07:27 Europe/Budapest] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 18:07:38 Europe/Budapest] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 18:08:03 Europe/Budapest] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 11:13:11 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'helooko1_whyerd1'@'localhost' (using password: YES) in /home/helooko1/levike.pushtoweb.com/admin/config.php on line 8
+[23-Oct-2021 11:13:11 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 14
+[23-Oct-2021 11:13:11 America/Chicago] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 23
+[23-Oct-2021 18:32:59 Europe/Budapest] PHP Fatal error:  Cannot use [] for reading in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 9
+[23-Oct-2021 18:33:45 Europe/Budapest] PHP Fatal error:  Cannot use [] for reading in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 15
+[23-Oct-2021 19:29:18 Europe/Budapest] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 18
+[23-Oct-2021 19:29:27 Europe/Budapest] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting ';' or ',' in /home/helooko1/levike.pushtoweb.com/admin/jslogin.php on line 18

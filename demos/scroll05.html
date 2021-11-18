@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            /* Hide scrollbars */
+        }
+        
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .section1 {
+            background-color: rgba(30, 143, 255, 0.39);
+        }
+        
+        .section2 {
+            background-color: rgba(165, 42, 42, 0.39);
+        }
+        
+        .section3 {
+            background-color: rgba(137, 43, 226, 0.383);
+        }
+        
+        .section4 {
+            background-color: rgba(95, 158, 160, 0.39);
+        }
+        
+        .section5 {
+            background-color: rgba(128, 255, 0, 0.39);
+        }
+        
+        .section6 {
+            background-color: rgba(184, 135, 11, 0.233);
+        }
+        
+        #particles-js {
+            height: 200vh;
+            width: 100%;
+            background: #0f2e35;
+            position: fixed;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+
+    <div class="main">
+        <div class="content">
+            <div class="section section1">
+                <h1>Section1</h1>
+            </div>
+            <div class="section section2">
+                <h1>Section2</h1>
+            </div>
+            <div class="section section3">
+                <h1>Section3</h1>
+            </div>
+            <div class="section section4">
+                <h1>Section4</h1>
+            </div>
+            <div class="section section5">
+                <h1>Section5</h1>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

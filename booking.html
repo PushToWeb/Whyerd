@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        #main_body {
+            margin: auto;
+            width: 896px;
+            border: 3px solid green;
+            padding: 10px;
+        }
+        
+        label {
+            display: block;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="/booking/booking.js"></script>
+
+</head>
+
+<body>
+
+    <div id="main_body">
+        <div id="booking_info">
+            <p>date</p>
+            <p id="date">Loading...</p>
+            <p>start:</p>
+            <p id="startTime">Loading...</p>
+            <p>end:</p>
+            <p id="endTime">Loading...</p>
+            <button id="changeDate">Change date</button>
+        </div>
+        <div class="yrInfo">
+            <h1>Your Details</h1>
+            <label>
+                Your Name
+                <input type="text" name="name" id="" placeholder="Your Name">
+            </label>
+            <label>
+                Your Email
+                <input type="email" name="email" placeholder="yourmail@mail.com">
+            </label> Any Custom Details / Questions
+            <label>
+                
+                <textarea id="customtext"></textarea>
+            </label>
+        </div>
+        <div class="others">
+            <h1>Your Team</h1>
+
+            <label id="member1" class="memberInfo">
+                <h3>Member #1</h3>
+                    Email
+                <input type="email" name="email" id="email" placeholder="yourmail@mail.com">
+            </label>
+
+            <button id="addMember" onclick="addMember()">Add new</button>
+            <p><span id="memberCount">1</span> / <span id="maxcount">10</span></p>
+        </div>
+        <button id="book">Book</button>
+
+
+    </div>
+</body>
+
+</html>

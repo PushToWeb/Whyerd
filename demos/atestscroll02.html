@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            scroll-snap-align: start;
+        }
+        
+        .main {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        
+        #one {
+            background: #0D947A;
+        }
+        
+        #two {
+            background: #D64C42;
+        }
+        
+        #three {
+            background: #4A2D9F;
+        }
+        
+        #four {
+            background: #C57C4D;
+        }
+        /*header*/
+        
+        .header {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            min-height: 59px;
+            font-size: 1rem;
+            background: linear-gradient(180deg, #1d1e22, rgba(29, 30, 34, 0.1), transparent);
+            mix-blend-mode: luminosity;
+        }
+        
+        .header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .header ul li a {
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 590;
+            color: #f4f4f4;
+            padding: 0px 10px;
+        }
+        
+        .active {
+            border: solid 2px white;
+        }
+        
+        .header ul li a::after {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            content: '';
+            width: 0;
+            height: 3px;
+            transition: all 0.2s linear;
+        }
+        
+        .header ul li a:hover::after {
+            width: 100%;
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("nav .header ul li");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.classList.contains(current)) {
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="main">
+        <nav>
+            <div class="header">
+                <ul>
+                    <li class="one">
+                        <a href="#one">First Page</a>
+                    </li>
+                    <li class="two">
+                        <a href="#two">Second Page</a>
+                    </li>
+                    <li class="three">
+                        <a href="#three">Third Page</a>
+                    </li>
+                    <li class="four">
+                        <a href="#four">Scotlaaaand</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="one">
+            <h1>First Page</h1>
+        </section>
+        <section id="two">
+            <h1>Second Page</h1>
+        </section>
+        <section id="three">
+            <h1>Third Page</h1>
+        </section>
+        <section id="four">
+            <h1>Scotlaaaand</h1>
+        </section>
+    </div>
+</body>
+
+</html>
